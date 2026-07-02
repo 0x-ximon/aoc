@@ -10,29 +10,40 @@ import (
 )
 
 func process(r io.Reader) int64 {
-	var dial, delta, password int64 = 50, 0, 0
+	var dial int64 = 50
+	var password int64 = 0
 
 	scanner := bufio.NewScanner(r)
+	if scanner.Err() != nil {
+		log.Fatalln(fmt.Errorf("scanner error => %w", scanner.Err()))
+	}
+
 	for scanner.Scan() {
 		line := scanner.Text()
 
 		direction := line[0]
-		distance, err := strconv.ParseInt(line[1:], 10, 64)
+		difference, err := strconv.ParseInt(line[1:], 10, 64)
 		if err != nil {
 			log.Fatalln(fmt.Errorf("number conversion failed => %w", err))
 		}
 
-		// (d%m + m) % m
+		password += difference / 100
+		step := difference % 100
+
 		switch direction {
 		case 'L':
-			delta = dial - distance
-		case 'R':
-			delta = dial + distance
-		}
+			delta := dial - step
+			if dial > 0 && delta <= 0 {
+				password++
+			}
+			dial = (delta + 100) % 100
 
-		dial = ((delta % 100) + 100) % 100
-		if dial == 0 {
-			password++
+		case 'R':
+			delta := dial + step
+			if dial > 0 && delta >= 100 {
+				password++
+			}
+			dial = (delta + 100) % 100
 		}
 	}
 
