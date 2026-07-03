@@ -1,27 +1,41 @@
-def next(x: int) -> int:
-    s = str(x)
-    n = len(s)
+import math
 
-    if x <= 10:
+
+def next(x: int) -> int:
+    if x <= 9:
         return 11
 
-    if n % 2 == 1:
-        m = (n + 1) / 2
-        half = str(int(10 ** (m - 1)))
-        result = int(half + half)
-        return result
+    def find(s: str) -> None:
+        nonlocal jump
 
-    m = int(n / 2)
-    a = int(s[:m])
-    b = int(s[m:])
+        n = len(s)
 
-    if a > b:
-        next = str(a)
-    else:
-        next = str(a + 1)
+        for i in range(n // 2, 0, -1):
+            if n % i != 0:
+                continue
 
-    result = int(next + next)
-    return result
+            # Get first section and how many times to repeat
+            sub = int(s[:i])
+            r = n // i
+
+            # Not incrementing sub
+            value = int(str(sub) * r)
+            if value > x and value < jump:
+                jump = value
+
+            # Incrementing sub
+            sub += 1
+            value = int(str(sub) * r)
+            if value > x and value < jump:
+                jump = value
+
+    jump = math.inf
+    s = str(x)
+
+    find(s)
+    find(str(10 ** len(s)))
+
+    return int(jump)
 
 
 def process(data: str) -> int:
