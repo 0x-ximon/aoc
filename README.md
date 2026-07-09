@@ -1,6 +1,6 @@
 # Advent of Code
 
-Repository holding my solutions for Advent of Code: each year is in its own branch and I randomly pick a languages from here and attempt to solve it with it:
+Repository holding my solutions for Advent of Code. I randomly pick a languages from here and attempt to solve it with it:
 
 - C
 - C#
