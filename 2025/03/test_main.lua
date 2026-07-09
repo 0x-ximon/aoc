@@ -1,4 +1,4 @@
-local mod = require("lib")
+local mod = require("meta")
 local ok, lu = pcall(require, "luaunit")
 if not ok then
     print("luaunit not found")

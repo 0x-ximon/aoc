@@ -1,4 +1,4 @@
-local mod = require("lib")
+local mod = require("meta")
 
 function main()
     local file = io.open("input.txt", "r")
