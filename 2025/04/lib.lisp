@@ -1,9 +1,16 @@
+(defpackage :lib
+  (:use :cl)
+  (:shadow :first :second)
+  (:export :first :second :*directions*))
+
+(in-package :lib)
+
 (defvar *directions*
   (list  (list -1 -1) (list -1  0) (list -1  1)
          (list  0 -1)              (list  0  1)
          (list  1 -1) (list  1  0) (list  1  1)))
 
-(defun part-one (data)
+(defun first (data)
   (let ((result 0)
         (m (list-length data))
         (n (length (nth 0 data))))
@@ -29,7 +36,7 @@
                       (incf result))))))
     result))
 
-(defun part-two (data)
+(defun second (data)
   (let ((result 0)
         (m (list-length data))
         (n (length (nth 0 data))))
