@@ -1,8 +1,9 @@
 (require "asdf")
-(load "meta.lisp")
+(load "lib.lisp")
 
-(defun main() 
+(defun main()
   (let ((content (uiop:read-file-lines "input.txt")))
-    (format t "Answer: ~A~%" (process content))))
+    (format t "First Answer: ~A~%" (part-one content))
+    (format t "Second Answer: ~A~%" (part-two content))))
 
 (main)
