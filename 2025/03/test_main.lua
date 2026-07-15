@@ -1,8 +1,13 @@
 local lib = require("lib")
-local ok, lu = pcall(require, "luaunit")
-if not ok then
-    print("luaunit not found")
-    return
+
+---@param expected integer
+---@param actual integer
+local function assert(expected, actual)
+    if expected == actual then
+        print("Assertion Passed.")
+    else
+        print(string.format("Assertion Failed; expected: %d, actual: %d", expected, actual))
+    end
 end
 
 function test_main()
@@ -17,11 +22,11 @@ function test_main()
 
     local first_expected = 357
     local first_result = lib.first(data)
-    lu.assertEquals(first_expected, first_result)
+    assert(first_expected, first_result)
 
     local second_expected = 3121910778619
     local second_result = lib.second(data)
-    lu.assertEquals(second_expected, second_result)
+    assert(second_expected, second_result)
 end
 
-os.exit(lu.LuaUnit.run())
+test_main()
