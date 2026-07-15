@@ -5,7 +5,7 @@
 - Day 03: Lua
 - Day 04: Lisp
 - Day 05: C++
-- Day 06:
+- Day 06: TypeScript
 - Day 07:
 - Day 08:
 - Day 09:
