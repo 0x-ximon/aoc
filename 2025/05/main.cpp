@@ -16,9 +16,9 @@ int main() {
     std::vector<std::string> data;
     while (std::getline(f, buffer)) data.push_back(buffer);
 
-    int first_answer = first(data);
+    uint64_t first_answer = first(data);
     std::println("First Answer: {}", first_answer);
 
-    int second_answer = second(data);
+    uint64_t second_answer = second(data);
     std::println("Second Answer: {}", second_answer);
 }
