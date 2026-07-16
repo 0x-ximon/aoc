@@ -1,0 +1,25 @@
+{
+    "name": "06",
+    "version": "1.0.0",
+    "description": "",
+    "main": "main.ts",
+    "scripts": {
+        "start": "node main.ts",
+        "test": "node main_test.ts"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devEngines": {
+        "packageManager": {
+            "name": "pnpm",
+            "version": "^11.13.0",
+            "onFail": "download"
+        }
+    },
+    "type": "module",
+    "devDependencies": {
+        "@types/node": "^26.1.1",
+        "typescript": "^7.0.2"
+    }
+}
