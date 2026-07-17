@@ -1,5 +1,5 @@
 import fs from "node:fs";
-import { first } from "./lib.ts";
+import { first, second } from "./lib.ts";
 
 function main() {
     const file = fs.readFileSync("input.txt", "utf-8");
@@ -8,8 +8,11 @@ function main() {
         .map((line) => line.trimEnd())
         .filter((line) => line.length > 0);
 
-    const firstAnswer = first(data);
+    const firstAnswer = first(data.slice());
     console.info(`First Answer: ${firstAnswer}`);
+
+    const secondAnswer = second(data.slice());
+    console.info(`Second Answer: ${secondAnswer}`);
 }
 
 main();
