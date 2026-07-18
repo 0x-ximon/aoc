@@ -1,10 +1,8 @@
 #[cfg(test)]
-mod test {
-    use aoc_07::first;
+mod test_main {
+    use aoc_07::{first, second};
 
-    #[test]
-    fn test_main() -> () {
-        let data = r#".......S.......
+    const DATA: &str = r#".......S.......
 ...............
 .......^.......
 ...............
@@ -21,8 +19,17 @@ mod test {
 .^.^.^.^.^...^.
 ..............."#;
 
+    #[test]
+    fn test_first() -> () {
         let first_expected = 21;
-        let first_actual = first(data.lines());
+        let first_actual = first(DATA.lines());
         assert_eq!(first_expected, first_actual);
+    }
+
+    #[test]
+    fn test_second() -> () {
+        let second_expected = 40;
+        let second_actual = second(DATA.lines());
+        assert_eq!(second_expected, second_actual);
     }
 }
