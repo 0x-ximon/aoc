@@ -1,0 +1,31 @@
+cabal-version:      3.0
+name:               x08
+version:            0.1.0.0
+license:            MIT
+license-file:       LICENSE
+author:             Simon Samuel
+maintainer:         salviensky@gmail.com
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+common warnings
+    ghc-options: -Wall
+
+executable x08
+    import:           warnings
+    main-is:          Main.hs
+    other-modules:    Lib
+    build-depends:    base >= 4.14 && < 5,
+                      containers
+    hs-source-dirs:   app
+    default-language: GHC2024
+
+test-suite x08-test
+    import:           warnings
+    main-is:          TestMain.hs
+    other-modules:    Lib
+    type:             exitcode-stdio-1.0
+    build-depends:    base >= 4.14 && < 5,
+                      containers
+    hs-source-dirs:   app
+    default-language: GHC2024
+    ghc-options:      -main-is TestMain.testMain

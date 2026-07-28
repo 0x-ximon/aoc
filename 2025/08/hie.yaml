@@ -1,0 +1,10 @@
+cradle:
+  cabal:
+    - path: "app/Main.hs"
+      component: "x08:exe:x08"
+
+    - path: "app/Lib.hs"
+      component: "x08:exe:x08"
+
+    - path: "app"
+      component: "x08:test:x08-test"
