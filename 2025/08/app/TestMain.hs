@@ -6,9 +6,9 @@ import System.Exit (exitFailure)
 assert :: (Eq a, Show a) => a -> a -> IO ()
 assert expected actual =
     if expected == actual
-        then putStrLn "Test Passed."
+        then putStrLn "Assertion Passed."
         else do
-            putStrLn $ "Test Failed; Expected: " ++ show expected ++ ", Actual: " ++ show actual
+            putStrLn $ "Assertion Failed; Expected: " ++ show expected ++ ", Actual: " ++ show actual
             exitFailure
 
 d :: [String]
@@ -37,8 +37,12 @@ d =
 
 testMain :: IO ()
 testMain =
-    let
-        firstExpected = 40
-        firstActual = first d 10
-     in
+    do
         assert firstExpected firstActual
+        assert secondExpected secondActual
+  where
+    firstExpected = 40
+    firstActual = first d 10
+
+    secondExpected = 25272
+    secondActual = second d

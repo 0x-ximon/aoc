@@ -9,3 +9,6 @@ main = do
 
     let firstAnswer = first contents 1000
     putStrLn $ "First Answer: " ++ show firstAnswer
+
+    let secondAnswer = second contents
+    putStrLn $ "Second Answer: " ++ show secondAnswer
