@@ -8,7 +8,7 @@
 - Day 06: TypeScript
 - Day 07: Rust
 - Day 08: Haskell
-- Day 09:
+- Day 09: C
 - Day 10:
 - Day 11:
 - Day 12:
