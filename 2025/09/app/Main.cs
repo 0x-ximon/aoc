@@ -1,10 +1,5 @@
-﻿void main() {
-
-
-
-
-
-
+﻿void main()
+{
     string[] data = File.ReadAllLines("input.txt");
 
     Int64 firstAnswer = Lib.first(data);

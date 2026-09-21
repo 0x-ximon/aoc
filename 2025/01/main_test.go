@@ -24,14 +24,14 @@ func Test_Process(t *testing.T) {
 	}
 
 	firstExpected := int64(3)
-	firstResult := first(data)
-	if firstExpected != firstResult {
-		t.Errorf("expected: %d, actual: %d", firstExpected, firstResult)
+	firstActual := first(data)
+	if firstExpected != firstActual {
+		t.Errorf("expected: %d, actual: %d", firstExpected, firstActual)
 	}
 
 	secondExpected := int64(6)
-	secondResult := second(data)
-	if secondExpected != secondResult {
-		t.Errorf("expected: %d, actual: %d", secondExpected, secondResult)
+	secondActual := second(data)
+	if secondExpected != secondActual {
+		t.Errorf("expected: %d, actual: %d", secondExpected, secondActual)
 	}
 }

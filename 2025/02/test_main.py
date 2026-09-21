@@ -6,9 +6,9 @@ def test_main():
     data = raw.split(",")
 
     first_expected = 1227775554
-    first_result = first(data)
-    assert first_expected == first_result
+    first_actual = first(data)
+    assert first_expected == first_actual
 
     second_expected = 4174379265
-    second_result = second(data)
-    assert second_expected == second_result
+    second_actual = second(data)
+    assert second_expected == second_actual

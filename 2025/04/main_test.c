@@ -20,10 +20,10 @@ int main() {
     };
 
     uint64_t first_expected = 13;
-    uint64_t first_result = first(data, n);
-    assert(first_expected, first_result);
+    uint64_t first_actual = first(data, n);
+    assert(first_expected, first_actual);
 
     uint64_t second_expected = 43;
-    uint64_t second_result = second(data, n);
-    assert(second_expected, second_result);
+    uint64_t second_actual = second(data, n);
+    assert(second_expected, second_actual);
 }
