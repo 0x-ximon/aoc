@@ -4,17 +4,17 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         try {
-            var path = Path.of("input.txt");
-            var data = Files.readAllLines(path);
+            final var path = Path.of("input.txt");
+            final var data = Files.readAllLines(path);
 
-            var firstAnswer = Lib.first(data);
+            final var firstAnswer = Lib.first(data);
             System.out.println("First Answer: %s".formatted(firstAnswer));
 
-            var secondAnswer = Lib.second(data);
+            final var secondAnswer = Lib.second(data);
             System.out.println("Second Answer: %s".formatted(secondAnswer));
-        } catch (Exception e) {
+        } catch (final Exception e) {
             e.printStackTrace();
         }
     }
