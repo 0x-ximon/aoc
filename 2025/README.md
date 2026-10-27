@@ -11,4 +11,4 @@
 - Day 09: C#
 - Day 10: Java
 - Day 11: Swift
-- Day 12:
+- Day 12: Zig
